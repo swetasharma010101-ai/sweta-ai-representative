@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f2ee;
+    color: #0d0d0d;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #c8452d;
+    color: #f5f2ee;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #c8beb5; border-radius: 3px; }
+}
+
+@layer components {
+  .serif { font-family: 'DM Serif Display', serif; }
+
+  .btn-primary {
+    @apply bg-ink text-paper px-5 py-2.5 text-sm font-medium tracking-wide
+           hover:bg-accent transition-colors duration-200 rounded-none;
+  }
+
+  .btn-ghost {
+    @apply border border-border text-ink px-5 py-2.5 text-sm font-medium
+           hover:border-ink transition-colors duration-200 rounded-none;
+  }
+
+  .chat-bubble-user {
+    @apply bg-ink text-paper px-4 py-3 max-w-[80%] ml-auto text-sm leading-relaxed;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-white border border-border px-4 py-3 max-w-[80%] text-sm leading-relaxed shadow-sm;
+  }
+}
